@@ -1,0 +1,30 @@
+{% extends 'jobportal/base.html' %}
+
+{% block title %}
+    FlixCareers | Description {{job.title}}
+{% endblock title %}
+
+{% block content %}
+<section>
+    <div class="container">
+      <div class="view-post">
+        <h1 class="jobtitle">
+          {{ Job.title }}
+        </h1>
+        <p class="location it">Location: <span>{{Job.location.city}}</span></p>
+        <p class="status it">Type: <span>{{Job.type}}</span></p>
+        <p class="budget it">Salary: <span>{{Job.salary}}</span></p>
+        <div class="desc">
+          <p class="details">
+            {{Job.description}}
+          </p>
+        </div>
+        <div class="buttons" align="right">
+          <a href="{% url 'thankyou' %}">
+          <button class="apply">Apply</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock content %}

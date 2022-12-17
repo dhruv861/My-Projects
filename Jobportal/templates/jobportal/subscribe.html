@@ -1,0 +1,16 @@
+{% extends 'jobportal/base.html' %}
+{% block title %}FlixCareers | Subscribe{% endblock title %}
+
+{% block content %}
+<section>
+  <div class="container">
+      
+      <form class="email-form" method="post">
+        <center><h2 style="color: #7281E0 ">Subscribe Form </h2></center>
+        {% csrf_token %}
+        {{form.as_p}}
+      <button class="email-submit">Submit</button>
+      </form>
+  </div>
+</section>
+{% endblock content %}

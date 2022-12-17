@@ -1,0 +1,66 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Projects</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="card">
+      <div class="card-body">
+        <h1 class="text-center my-3">My Projects</h1>
+      </div>
+    </div>
+
+  
+
+    <div class="row g-0 bg-light position-relative">
+        <div class="col-md-6 mb-md-0 p-md-4">
+          <img src="{% static 'jobapp/job_portal.png' %}" class="w-100" alt="...">
+        </div>
+        <div class="col-md-6 p-4 ps-md-0">
+          <h3 class="mt-0">Job Portal</h3>
+          <hr> 
+          
+            <h6><strong>Technologies Used: </strong>  Python | Django Web Framework | SQLite Database | HTML-CSS</h6>
+            <strong>Overview: </strong> 
+          
+            <ul>
+                <li>List of Job Openings which retrieves data from Database.</li>
+                <li>A recruiter can register and can add a Job Post </li>
+                <li>Users can Subscribe for the job updates.</li>
+                <li>Django: Model-View-Template(MVT),Object Relational Mapping(ORM), Models and Databases, Forms, Admin Panel. </li>
+              </ul>
+          
+          <a href="jobportal/" class="stretched-link" >Project Link</a>
+        </div>
+    </div>
+
+    <div class="row g-0 bg-light position-relative">
+        <div class="col-md-6 mb-md-0 p-md-4">
+          <img src="{% static 'empmanage/Emp_Manage.png' %}" class="w-100" alt="...">
+        </div>
+        <div class="col-md-6 p-4 ps-md-0">
+          <h3 class="mt-0">Employee Management</h3>
+          <hr> 
+          
+            <h6><strong>Technologies Used: </strong>  Python | Django Web Framework | SQLite Database | Bootstrap</h6>
+            <strong>Overview: </strong> 
+          
+            <ul>
+                <li>List of all the Employee .</li>
+                <li>Add/Update/Delete Employee </li>
+                <li>Django: Model-View-Template(MVT), Models and Databases, Forms, Admin Panel. </li>
+              </ul>
+          <a href="Empmanage/" class="stretched-link">Project Link</a>
+        </div>
+      </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+

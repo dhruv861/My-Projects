@@ -1,0 +1,44 @@
+{% extends 'jobportal/base.html' %}
+
+    {% block title %}
+        FlixCareers | Home
+    {% endblock title %}
+
+{% block content %}
+    <!-- job post lists -->
+    <section>
+        <div class="container">
+          <!-- job post -->
+          {% for job in joblist %}
+          <div class="post">
+            <!-- title and des -->
+            <div class="job-info">
+              <h1 class="job-title">{{job.title}}</h1>
+              <div class="job-des">
+                <div class="location item">
+                  <span class="material-icons"> place </span>
+                  <p>{{job.location.city}}</p>
+                </div>
+                <div class="budget item">
+                    <span class="material-symbols-outlined">
+                        currency_rupee
+                        </span>
+                  <p>{{job.salary}}</p>
+                </div>
+                <div class="time item">
+                  <span class="material-icons"> schedule </span>
+                  <p>{{job.job_type}}</p>
+                </div>
+              </div>
+            </div>
+            <div class="buttons">
+                <a href="{% url 'job_detail' job.id job.slug  %}">
+              <button class="apply">View Job</button>
+                </a>
+            </div>
+          </div>
+          <!-- job post end-->
+          {% endfor %}
+        </div>
+      </section>
+{% endblock content %}

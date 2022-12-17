@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Add Employee</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+  <body>
+    {%include 'empmanage/navbar.html'%}
+
+    <h1 class="text-center my-3">Add New Employee</h1>
+    <div class="container" >
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <div class="card">
+            <div class="card-body">
+              <form action="{% url 'addemp' %}" method="POST">
+                {% csrf_token %}
+                <div class="mb-3">
+                  <label for="name">Employee Name</label>
+                  <input type="text" class="form-control" name="emp_name" id="name" placeholder="Enter Employee Name">
+                </div>
+                <div class="mb-3">
+                  <label for="id">Employee ID</label>
+                  <input type="text" class="form-control" name="emp_id" id="id" placeholder="Enter Employee ID">
+                </div>
+                <div class="mb-3">
+                  <label for="phone">Phone Number</label>
+                  <input type="tel" class="form-control" name="phone" id="phone" placeholder="Enter Phone Number">
+                </div>
+                <div class="mb-3">
+                  <label for="email">Email ID</label>
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email id">
+                </div>
+                <div class="mb-3">
+                  <label for="address">Address</label>
+                  <textarea class="form-control" name="address" id="address" placeholder="Enter your address"></textarea>
+                </div>
+                {% comment %} <div class="mb-3 form-check">
+                  <label for="working">Working</label>
+                  <input type="checkbox" class="form-check-input" name="working" id="working">                  
+                </div> {% endcomment %}
+               <div class="mb-3">
+                 <label for="department">Department</label>
+                 <select name="department" class="form-control" id="department">
+                    <option value="CSE">Computer Science Engg</option>
+                    <option value="ECE">Electronics and Communication Engg </option>
+                    <option value="EE">Electrical Engg</option>
+                  </select>
+               </div>
+               <div class="container text-center">
+                <button type="submit">Add Employee</button>
+               </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      
+    </div>
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>
