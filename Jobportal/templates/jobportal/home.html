@@ -5,40 +5,36 @@
     {% endblock title %}
 
 {% block content %}
-    <!-- job post lists -->
-    <section>
-        <div class="container">
-          <!-- job post -->
-          {% for job in joblist %}
-          <div class="post">
-            <!-- title and des -->
-            <div class="job-info">
-              <h1 class="job-title">{{job.title}}</h1>
-              <div class="job-des">
-                <div class="location item">
-                  <span class="material-icons"> place </span>
-                  <p>{{job.location.city}}</p>
+    {% for job in joblist %}
+    <div style="width: 75%;  margin: 40px auto;">
+        <div class="card" style="box-shadow:8px 8px 5px rgb(40 107 206 / 23%);">
+            
+            <b><h5 class="card-header" style="color:#4c5fd9;">{{job.title}}</h5></b>
+            <div class="card-body">
+                <div class="icon" style="display:flex;">
+                    <span class="material-symbols-outlined">
+                        location_on
+                    </span>
+                    <h5 class="card-title" style="padding-left:10px; color:#00000099;">{{job.location.city}}</h5>
                 </div>
-                <div class="budget item">
+                <div class="icon" style="display:flex;">
                     <span class="material-symbols-outlined">
                         currency_rupee
-                        </span>
-                  <p>{{job.salary}}</p>
+                    </span>
+                    <h5 class="card-title" style="padding-left:10px;color:#00000099;">{{job.salary}}</h5>
                 </div>
-                <div class="time item">
-                  <span class="material-icons"> schedule </span>
-                  <p>{{job.job_type}}</p>
+                <div class="icon" style="display:flex;" >
+                    <span class="material-symbols-outlined">
+                        schedule
+                    </span>
+                    <h5 class="card-title" style="padding-left:10px;color:#00000099;">{{job.job_type}}</h5>
                 </div>
-              </div>
+            
+            <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+            <div style="padding:10px;padding-left: 5px;"><a href="{% url 'job_detail' job.id job.slug  %}" class="btn btn-primary" style="background-color:#4c5fd9">View Job</a></div>
             </div>
-            <div class="buttons">
-                <a href="{% url 'job_detail' job.id job.slug  %}">
-              <button class="apply">View Job</button>
-                </a>
-            </div>
-          </div>
-          <!-- job post end-->
-          {% endfor %}
         </div>
-      </section>
+    </div>
+    {% endfor %}
 {% endblock content %}
+ 

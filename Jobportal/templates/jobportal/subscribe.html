@@ -2,15 +2,15 @@
 {% block title %}FlixCareers | Subscribe{% endblock title %}
 
 {% block content %}
-<section>
-  <div class="container">
-      
-      <form class="email-form" method="post">
-        <center><h2 style="color: #7281E0 ">Subscribe Form </h2></center>
-        {% csrf_token %}
-        {{form.as_p}}
-      <button class="email-submit">Submit</button>
-      </form>
-  </div>
+<section style="margin-bottom: 20px;margin-top: 30px;margin-left: 10px;margin-right: 10px;border-left-width: 10px;border-top-width: 10px;border-bottom-width: 10px;border-right-width: 10px;padding-bottom: 0px;padding-top: 0px;padding-right: 10;padding-right:10px;padding-left: 0px;padding-right: 0px;"> 
+    <div class="card" style="margin: auto;width: 75%;padding:30px;box-shadow:8px 8px 5px rgb(40 107 206 / 23%);">
+        <form method="post">
+            <h2 style="color: #7281E0; padding:5px;">Subscribe Form </h2> 
+            <hr>
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
 </section>
-{% endblock content %}
+    {% endblock content %}

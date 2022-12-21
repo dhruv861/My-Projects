@@ -4,27 +4,36 @@
     FlixCareers | Description {{job.title}}
 {% endblock title %}
 
-{% block content %}
-<section>
-    <div class="container">
-      <div class="view-post">
-        <h1 class="jobtitle">
-          {{ Job.title }}
-        </h1>
-        <p class="location it">Location: <span>{{Job.location.city}}</span></p>
-        <p class="status it">Type: <span>{{Job.type}}</span></p>
-        <p class="budget it">Salary: <span>{{Job.salary}}</span></p>
-        <div class="desc">
-          <p class="details">
-            {{Job.description}}
-          </p>
+
+  
+    {% block content %}
+    {% comment %} <section style="background-color: rgba(211, 211, 211, 0.308); position:relative ">  {% endcomment %}
+   <div style="margin: auto;width: 80%;padding: 50px;  "> 
+        <div class="card" style="width: 100%;box-shadow: 8px 8px 5px rgba(68, 68, 68, 0.512);">
+            <Strong><h5 class="card-header" style="color:#4c5fd9;">{{ Job.title }}</h5></Strong>
+            <div class="card-body"></div>
+            <div style="padding: 8px 16px 8px 16px; display:flex;">
+                <span class="material-symbols-outlined">
+                    location_on
+                </span>
+                <h5 class="card-title" style="padding-left:5px; color:#00000099;">{{Job.location.city}}</h5>
+            </div>
+            <div style="padding: 8px 16px 8px 16px;display:flex;">
+                <span class="material-symbols-outlined">
+                    schedule
+                </span>
+                <h5 class="card-title" style="padding-left:5px;color:#00000099;">{{Job.job_type}}</h5>
+            </div>
+            <div style="padding: 8px 16px 8px 16px;display:flex;">
+                <span class="material-symbols-outlined">
+                    currency_rupee
+                </span>
+                <h5 class="card-title" style="padding-left:5px ;color:#00000099;">{{Job.salary}}</h5>
+            </div>
+            <div style="padding:30px"><p class="card-text" style="max-height: 300px;overflow-y: scroll;">{{Job.description}}</p></div>
+            <a href="{% url 'thankyou' %}" class="btn btn-primary">Apply</a>
+            </div>
         </div>
-        <div class="buttons" align="right">
-          <a href="{% url 'thankyou' %}">
-          <button class="apply">Apply</button>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+     </div>
+   {% comment %} </section>  {% endcomment %}
 {% endblock content %}
